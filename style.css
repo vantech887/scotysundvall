@@ -1,0 +1,335 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+section{
+  padding: 40px;
+}
+
+button{
+  background: black;
+  padding: 10px;
+  border-style: none;
+  border-radius: 50px;
+  text-decoration: none;
+
+}
+
+p{
+  font-size: 18px;
+  word-spacing: 2px;
+}
+
+/*nav*/
+
+nav {
+  background-color: #270722;
+  color: white;
+}
+
+.navcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.menu {
+  display: flex;
+  transition: transform 0.3s ease; /* Added for smooth sliding effect */
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  padding: 30px 15px;
+  border-radius: 15%;
+  transition: background-color 0.3s ease; /* Adding smooth transition */
+}
+
+.menu li:hover {
+  background-color: #073B4C;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav{
+    padding: 10px 0;
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #270722;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu.show {
+    display: flex; /* Show the menu when .show class is added */
+    transform: translateY(0); /* Slide in from the top */
+  }
+
+  .menu ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .menu li {
+    padding: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+
+
+  /* home styles */
+.home-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.intro {
+    flex-basis: 70%;
+    padding-right: 20px;
+  }
+
+.image {
+    flex-basis: 30%;
+    text-align: right;
+  }
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 30%;
+  }
+
+  .intro h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .faded{
+    font-size: 24px;
+    color: #073B4C;
+    opacity: 0.5;"
+  }
+
+  .accent{
+    color: #EF6F6C;
+  }
+
+  /* Work section styles */
+  #work {
+  
+  }
+
+  #experience{
+    background: #062C37;
+    color: white;
+    
+  }
+
+
+  .exp-header{
+    padding: 40px 0;
+  }
+
+  .exp-header h2{
+    text-align: center;
+  }
+  .exp-header span{
+    display: block;
+    margin: auto;
+    background-color: black;
+    padding :1px;
+    margin: 0 40%;
+    border-radius: 25%;
+  }
+ 
+  /* Work item styles */
+  .work-list-container {
+    max-width: 1200px; /* Set the maximum width as per your requirement */
+    margin: 0 auto; /* Center the container */
+  }
+
+  .work-list li {
+    padding: 20px;
+    color: black;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .work-list li.expand {
+    grid-column: span 4;
+  }
+  .work-list p, h3{
+    text-align: center;
+  }
+
+  /* Read More button styles */
+  .read-more {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    text-align: right;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Truncated text styles */
+  .truncated-text {
+    max-height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Toggle content styles */
+  .toggle-content {
+    display: none;
+  }
+
+  /* Toggle content visible styles */
+  .toggle-content.visible {
+    display: block;
+    grid-column: span 4;
+  }
+
+  #contact{
+    margin-bottom: 50px;
+  }
+
+
+footer{
+  text-align: center;
+  background: black;
+  color: white;
+  padding: 50px 0;
+}
+
+
+/*artwork stuff*/
+
+.scapegoat {
+  position: relative;
+  list-style: none;
+}
+
+.scapegoat::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/scapegoat.jpeg");
+  background-size: cover;
+  opacity: 1; /* Adjust the opacity to control the fade effect */
+  z-index: -1; /* Set a negative z-index to place it behind the content */
+}
+
+/* Style the content (text) on top of the image */
+.scapegoat h3, .scapegoat p {
+  position: relative;
+  z-index: 1;
+  color: white; /* Adjust the text color to ensure it's visible on top of the image */
+  /* Add any additional styles for the text as needed */
+}
+
+.debaucherous-debasement {
+  position: relative;
+  list-style: none;
+}
+
+.debaucherous-debasement::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/debaucherous-debasement.jpg");
+  background-size: cover;
+  opacity: 1; /* Adjust the opacity to control the fade effect */
+  z-index: -1; /* Set a negative z-index to place it behind the content */
+}
+
+/* Style the content (text) on top of the image */
+.debaucherous-debasement h3, .debaucherous-debasement p {
+  position: relative;
+  z-index: 1;
+  color: white; /* Adjust the text color to ensure it's visible on top of the image */
+  /* Add any additional styles for the text as needed */
+}
+
+ /* Work list styles */
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+/* For smaller screens, display in two columns */
+@media (max-width: 768px) {
+  .work-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Expanded items */
+  .work-list li.expand {
+    grid-column: span 2;
+  }
+}
+/* For even smaller screens, display in one column */
+@media (max-width: 480px) {
+  .work-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Expanded items */
+  .work-list li.expand {
+    grid-column: span 1;
+  }
+}
+
+
+
